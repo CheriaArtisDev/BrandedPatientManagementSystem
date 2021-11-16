@@ -5,13 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BPMS.Data
+namespace BPMS.Models
 {
-    public class Doctor
+    public class DoctorCreate
     {
-        [Key]
-        public int DoctorId { get; set; }
-
         [Required]
         [Display(Name = "Doctor's First Name")]
         public string DoctorFirstName { get; set; }
@@ -19,15 +16,6 @@ namespace BPMS.Data
         [Required]
         [Display(Name = "Doctor's Last Name")]
         public string DoctorLastName { get; set; }
-
-        [Display(Name = "Doctor's Full Name")]
-        public string DoctorFullName 
-        {
-            get
-            {
-                return DoctorFirstName + " " + DoctorLastName;
-            } 
-        }
 
         [Required]
         [MaxLength(50)]

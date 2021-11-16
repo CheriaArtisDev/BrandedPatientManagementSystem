@@ -56,11 +56,29 @@
   <ItemGroup>
     <Compile Include="Doctor.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\202111161622405_InitialCreate.cs" />
+    <Compile Include="Migrations\202111161622405_InitialCreate.Designer.cs">
+      <DependentUpon>202111161622405_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111161627111_DoctorClassAdded.cs" />
+    <Compile Include="Migrations\202111161627111_DoctorClassAdded.Designer.cs">
+      <DependentUpon>202111161627111_DoctorClassAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Patient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202111161622405_InitialCreate.resx">
+      <DependentUpon>202111161622405_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111161627111_DoctorClassAdded.resx">
+      <DependentUpon>202111161627111_DoctorClassAdded.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
