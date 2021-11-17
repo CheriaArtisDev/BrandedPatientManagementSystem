@@ -33,9 +33,19 @@ namespace BPMS.Controllers
                 return View(model);
             }
 
-            var service = new DoctorService();
-            service.CreateDoctor(model);
-            return RedirectToAction("Index");
+            var service = CreateDoctorService();
+            if (service.CreateDoctor(model))
+            {
+                TempData["SaveResult"] = "Your doctor was created.";
+                return RedirectToAction("Index");
+            };
+            ModelState.AddModelError("", "Doctor could not be added.");
+            return View(model);
+        }
+
+        private static DoctorService CreateDoctorService()
+        {
+            return new DoctorService();
         }
     }
 }
