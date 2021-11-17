@@ -47,5 +47,12 @@ namespace BPMS.Controllers
         {
             return new DoctorService();
         }
+
+        public ActionResult Details(int id)
+        {
+            var svc = CreateDoctorService();
+            var model = svc.GetDoctorById(id);
+            return View(model);
+        }
     }
 }

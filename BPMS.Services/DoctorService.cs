@@ -43,5 +43,22 @@ namespace BPMS.Services
                 return query.ToArray();
             }
         }
+
+        public DoctorDetail GetDoctorById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Doctors.Single(e => e.DoctorId == id);
+
+                return new DoctorDetail
+                {
+                    DoctorId = entity.DoctorId,
+                    DoctorFirstName = entity.DoctorFirstName,
+                    DoctorLastName = entity.DoctorLastName,
+                    DoctorSpecialty = entity.DoctorSpecialty,
+                    TakingNewPatients = entity.TakingNewPatients
+                };
+            }
+        }
     }
 }

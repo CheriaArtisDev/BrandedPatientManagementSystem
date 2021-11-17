@@ -1,0 +1,50 @@
+﻿@model BPMS.Models.DoctorDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>DoctorDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DoctorFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DoctorFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DoctorLastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DoctorLastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DoctorSpecialty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DoctorSpecialty)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TakingNewPatients)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TakingNewPatients)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DoctorId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
