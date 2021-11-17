@@ -54,11 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DoctorService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BPMS.Data\BPMS.Data.csproj">
+      <Project>{d39cc52e-a2fa-4cc7-8eb9-fa3ed5055855}</Project>
+      <Name>BPMS.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BPMS.Models\BPMS.Models.csproj">
+      <Project>{0469c460-158c-454b-9d05-ce0ac4f7081e}</Project>
+      <Name>BPMS.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

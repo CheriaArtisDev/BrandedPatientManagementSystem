@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BPMS.Data.Doctor>
+﻿@model IEnumerable<BPMS.Models.DoctorListPerson>
 
 @{
     ViewBag.Title = "Index";
@@ -47,9 +47,9 @@
             @Html.DisplayFor(modelItem => item.TakingNewPatients)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.DoctorId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.DoctorId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.DoctorId })
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
         </td>
     </tr>
 }

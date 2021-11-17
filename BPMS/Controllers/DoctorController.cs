@@ -1,4 +1,6 @@
 ﻿using BPMS.Data;
+using BPMS.Models;
+using BPMS.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,13 +9,13 @@ using System.Web.Mvc;
 
 namespace BPMS.Controllers
 {
-    [Authorize]
     public class DoctorController : Controller
     {
         // GET: Doctor
         public ActionResult Index()
         {
-            var model = new Doctor[0];
+            var service = new DoctorService();
+            var model = service.GetDoctors();
             return View(model);
         }
 
@@ -26,11 +28,14 @@ namespace BPMS.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(DoctorCreate model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-
+                return View(model);
             }
-            return View(model);
+
+            var service = new DoctorService();
+            service.CreateDoctor(model);
+            return RedirectToAction("Index");
         }
     }
 }
