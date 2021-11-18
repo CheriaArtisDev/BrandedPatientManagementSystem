@@ -60,5 +60,20 @@ namespace BPMS.Services
                 };
             }
         }
+
+        public bool UpdateDoctor(DoctorEdit model)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Doctors.Single(e => e.DoctorId == model.DoctorId);
+
+                entity.DoctorFirstName = model.DoctorFirstName;
+                entity.DoctorLastName = model.DoctorLastName;
+                entity.DoctorSpecialty = model.DoctorSpecialty;
+                entity.TakingNewPatients = model.TakingNewPatients;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
