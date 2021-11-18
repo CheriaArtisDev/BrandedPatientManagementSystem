@@ -96,5 +96,25 @@ namespace BPMS.Controllers
             ModelState.AddModelError("", "Your Doctor could not be updated.");
             return View();
         }
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateDoctorService();
+            var model = svc.GetDoctorById(id);
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteDoctor(int id)
+        {
+            var service = CreateDoctorService();
+            service.DeleteDoctor(id);
+            TempData["SaveResult"] = "Your Doctor was deleted";
+            
+            return RedirectToAction("Index");
+        }
     }
 }
