@@ -105,5 +105,15 @@ namespace BPMS.Services
                 return ctx.SaveChanges() == 1;
             };
         }
+
+        public bool DeletePatient(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Patients.Single(e => e.PatientId == id);
+                ctx.Patients.Remove(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
