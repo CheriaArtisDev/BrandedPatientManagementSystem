@@ -58,5 +58,53 @@ namespace BPMS.Controllers
             var model = svc.GetPatientById(id);
             return View(model);
         }
+
+        public ActionResult Edit(int id)
+        {
+            var service = CreatePatientService();
+            var detail = service.GetPatientById(id);
+            var model = new PatientEdit
+            {
+                PatientId = detail.PatientId,
+                PatientFirstName = detail.PatientFirstName,
+                PatientLastName = detail.PatientLastName,
+                PatientAge = detail.PatientAge,
+                PatientAddress = detail.PatientAddress,
+                PatientPhoneNumber = detail.PatientPhoneNumber,
+                PatientBirthdate = detail.PatientBirthdate,
+                PatientGender = detail.PatientGender,
+                DoctorName = detail.DoctorName,
+                DoctorId = detail.DoctorId,
+                HasInsurance = detail.HasInsurance,
+                MaritalStatus = detail.MaritalStatus
+            };
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, PatientEdit model)
+        {
+            if(!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            if(model.PatientId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            var service = CreatePatientService();
+
+            if(service.UpdatePatient(model))
+            {
+                TempData["SaveResult"] = "Your Patient was updated.";
+                return RedirectToAction("Index");
+            }
+            ModelState.AddModelError("", "Your Patient could not be updated.");
+            return View(model);
+        }
     }
 }

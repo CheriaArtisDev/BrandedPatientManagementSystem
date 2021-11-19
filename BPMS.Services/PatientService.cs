@@ -82,5 +82,28 @@ namespace BPMS.Services
                 };
             }
         }
+
+        public bool UpdatePatient(PatientEdit model)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Patients.Single(e => e.PatientId == model.PatientId);
+
+                entity.PatientId = model.PatientId;
+                entity.PatientFirstName = model.PatientFirstName;
+                entity.PatientLastName = model.PatientLastName;
+                entity.PatientAge = model.PatientAge;
+                entity.PatientAddress = model.PatientAddress;
+                entity.PatientPhoneNumber = model.PatientPhoneNumber;
+                entity.PatientBirthdate = model.PatientBirthdate;
+                entity.PatientGender = model.PatientGender;
+                entity.Doctor.DoctorLastName = model.DoctorName;
+                entity.DoctorId = model.DoctorId;
+                entity.HasInsurance = model.HasInsurance;
+                entity.MaritalStatus = model.MaritalStatus;
+
+                return ctx.SaveChanges() == 1;
+            };
+        }
     }
 }
