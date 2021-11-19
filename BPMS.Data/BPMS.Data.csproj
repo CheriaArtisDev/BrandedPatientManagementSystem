@@ -64,6 +64,18 @@
     <Compile Include="Migrations\202111161627111_DoctorClassAdded.Designer.cs">
       <DependentUpon>202111161627111_DoctorClassAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111181457339_Patient.cs" />
+    <Compile Include="Migrations\202111181457339_Patient.Designer.cs">
+      <DependentUpon>202111181457339_Patient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111181542290_PatientFK.cs" />
+    <Compile Include="Migrations\202111181542290_PatientFK.Designer.cs">
+      <DependentUpon>202111181542290_PatientFK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202111181900560_fixingfk.cs" />
+    <Compile Include="Migrations\202111181900560_fixingfk.Designer.cs">
+      <DependentUpon>202111181900560_fixingfk.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Patient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,6 +90,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111161627111_DoctorClassAdded.resx">
       <DependentUpon>202111161627111_DoctorClassAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111181457339_Patient.resx">
+      <DependentUpon>202111181457339_Patient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111181542290_PatientFK.resx">
+      <DependentUpon>202111181542290_PatientFK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111181900560_fixingfk.resx">
+      <DependentUpon>202111181900560_fixingfk.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

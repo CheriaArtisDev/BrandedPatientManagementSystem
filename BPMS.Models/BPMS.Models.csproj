@@ -58,11 +58,20 @@
     <Compile Include="DoctorDetail.cs" />
     <Compile Include="DoctorEdit.cs" />
     <Compile Include="DoctorListPerson.cs" />
+    <Compile Include="PatientCreate.cs" />
+    <Compile Include="PatientDetail.cs" />
+    <Compile Include="PatientListPerson.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BPMS.Data\BPMS.Data.csproj">
+      <Project>{D39CC52E-A2FA-4CC7-8EB9-FA3ED5055855}</Project>
+      <Name>BPMS.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BPMS.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -6,13 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BPMS.Data
+namespace BPMS.Models
 {
-    public class Patient
+    public class PatientCreate
     {
-        [Key]
-        public int PatientId { get; set; }
-
         [Required]
         [Display(Name = "Patient's First Name")]
         public string PatientFirstName { get; set; }
@@ -22,7 +20,7 @@ namespace BPMS.Data
         public string PatientLastName { get; set; }
 
         [Display(Name = "Patient's Full Name")]
-        public string PatientFullName 
+        public string PatientFullName
         {
             get
             {
@@ -51,10 +49,9 @@ namespace BPMS.Data
         [Display(Name = "Patient's Gender")]
         public string PatientGender { get; set; }
 
-        public virtual Doctor Doctor { get; set; }
-        [ForeignKey(nameof(Doctor))]
+        public virtual List<Doctor> Doctors { get; set; }
+        [ForeignKey(nameof(DoctorId))]
         [Display(Name = "Patient's Doctor")]
-
         public int DoctorId { get; set; }
 
         [Required]

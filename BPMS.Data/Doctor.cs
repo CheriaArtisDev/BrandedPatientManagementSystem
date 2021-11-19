@@ -37,5 +37,7 @@ namespace BPMS.Data
         [Required]
         [Display(Name = "Taking New Patients?")]
         public bool TakingNewPatients { get; set; }
+
+        public virtual ICollection<Patient> PatientList { get; set; } = new List<Patient>();
     }
 }

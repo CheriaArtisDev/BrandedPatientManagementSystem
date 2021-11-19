@@ -1,0 +1,102 @@
+﻿@model IEnumerable<BPMS.Models.PatientListPerson>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@if(TempData.ContainsKey("SaveResult"))
+{
+    <div class="alert alert-success fade in" role="alert">
+        <button type="button" class="close" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+        @TempData["SaveResult"]
+    </div>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PatientFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PatientLastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PatientFullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PatientAge)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PatientAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PatientPhoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PatientBirthdate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PatientGender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DoctorName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HasInsurance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaritalStatus)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.PatientFirstName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PatientLastName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PatientFullName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PatientAge)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PatientAddress)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PatientPhoneNumber)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PatientBirthdate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PatientGender)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DoctorName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.HasInsurance)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MaritalStatus)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.PatientId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.PatientId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.PatientId })
+    </td>
+</tr>
+}
+
+</table>
