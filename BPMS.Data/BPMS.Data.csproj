@@ -119,6 +119,10 @@
     <Compile Include="Migrations\202111302109336_deletedbandputbackin.designer.cs">
       <DependentUpon>202111302109336_deletedbandputbackin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202112011336355_lasttouches.cs" />
+    <Compile Include="Migrations\202112011336355_lasttouches.designer.cs">
+      <DependentUpon>202112011336355_lasttouches.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Patient.cs" />
     <Compile Include="PatientVisitRecord.cs" />
@@ -198,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202111302109336_deletedbandputbackin.resx">
       <DependentUpon>202111302109336_deletedbandputbackin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202112011336355_lasttouches.resx">
+      <DependentUpon>202112011336355_lasttouches.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
