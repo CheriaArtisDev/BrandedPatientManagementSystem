@@ -34,6 +34,7 @@ namespace BPMS.Data
 
         public DbSet<Doctor> Doctors { get; set; }
         public DbSet<Patient> Patients { get; set; }
+        public DbSet<PatientVisitRecord> PatientVisitRecords { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

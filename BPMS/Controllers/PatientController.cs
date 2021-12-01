@@ -73,7 +73,6 @@ namespace BPMS.Controllers
                 PatientPhoneNumber = detail.PatientPhoneNumber,
                 PatientBirthdate = detail.PatientBirthdate,
                 PatientGender = detail.PatientGender,
-                DoctorName = detail.DoctorName,
                 DoctorId = detail.DoctorId,
                 HasInsurance = detail.HasInsurance,
                 MaritalStatus = detail.MaritalStatus

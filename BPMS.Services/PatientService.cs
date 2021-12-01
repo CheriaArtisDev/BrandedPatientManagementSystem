@@ -97,7 +97,6 @@ namespace BPMS.Services
                 entity.PatientPhoneNumber = model.PatientPhoneNumber;
                 entity.PatientBirthdate = model.PatientBirthdate;
                 entity.PatientGender = model.PatientGender;
-                entity.Doctor.DoctorLastName = model.DoctorName;
                 entity.DoctorId = model.DoctorId;
                 entity.HasInsurance = model.HasInsurance;
                 entity.MaritalStatus = model.MaritalStatus;

@@ -9,6 +9,7 @@ namespace BPMS.Models
 {
     public class PatientEdit
     {
+        [Key]
         public int PatientId { get; set; }
 
         [Display(Name = "Patient's First Name")]
@@ -46,8 +47,6 @@ namespace BPMS.Models
         [Display(Name = "Patient's Gender")]
         public string PatientGender { get; set; }
 
-        [Display(Name = "Patient's Doctor")]
-        public string DoctorName { get; set; }
         public int DoctorId { get; set; }
 
         [Display(Name = "Has Insurance?")]

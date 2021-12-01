@@ -1,0 +1,93 @@
+﻿@model IEnumerable<BPMS.Models.PatientVisitList>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RecordId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TestsScheduled)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TestResults)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AppointmentDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DoctorsNotes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prognosis)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PatientHeight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PatientWeight)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DoctorId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DoctorName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PatientId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PatientName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecordId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TestsScheduled)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TestResults)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AppointmentDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DoctorsNotes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prognosis)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PatientHeight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PatientWeight)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DoctorId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PatientId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.RecordId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.RecordId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.RecordId })
+        </td>
+    </tr>
+}
+
+</table>

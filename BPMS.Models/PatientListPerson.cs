@@ -10,8 +10,7 @@ using System.Threading.Tasks;
 namespace BPMS.Models
 {
     public class PatientListPerson
-    {
-       
+    {    
         public int PatientId { get; set; }
 
         [Display(Name = "Patient's First Name")]
